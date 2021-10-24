@@ -1,5 +1,6 @@
 #define PinButton 8 
 #define ledPin 7
+int count = 0;
 
 void setup() {
   pinMode(PinButton, INPUT); 
@@ -12,13 +13,20 @@ void loop()
 {
   if ( digitalRead(PinButton) == HIGH) // se chave = nivel alto 
   {
-    digitalWrite(ledPin, HIGH); 
-    Serial.print("Acendendo Led");
+    count = count%2;
+    Serial.println(count);
+    if (count = 0){
+       digitalWrite(ledPin, HIGH); 
+       Serial.println("Acendendo Led");
+       count ++;
+    }
+    else {
+      digitalWrite(ledPin, LOW); 
+      Serial.println("Desligando Led");
+      count++;
+    }
+  
   }
-  else 
-  {
-    digitalWrite(ledPin, LOW); 
-    Serial.print("Desligando led");
-  } 
-  delay(100);
+  delay(1000);
+  
 } 
