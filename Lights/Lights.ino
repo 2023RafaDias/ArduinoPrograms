@@ -42,7 +42,7 @@ void loop()
   
   }
 
-
+  
   int digit[] = {0,0,0};
   int number = Serial.read();
 
