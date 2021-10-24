@@ -6,14 +6,14 @@ void setup() {
   pinMode(7, OUTPUT);
   pinMode(8, OUTPUT);
   pinMode(2, INPUT);
+  pinMode(3, INPUT);
   pinMode(4, INPUT);
-  pinMode(5, INPUT);
 }
 
 // the loop function runs over and over again forever
 void loop() {
 
-  Serial.println(digitalRead(2));
+  Serial.println(digitalRead(4));
 //  if (digitalRead(3) == 1) {
  //   digitalWrite(6, HIGH);
 //  }
