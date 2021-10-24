@@ -1,25 +1,24 @@
-// the setup function runs once when you press reset or power the board
+#define PinButton 8 
+#define ledPin 7
+
 void setup() {
-  // initialize digital pin LED_BUILTIN as an output.
-  Serial.begin(9600);
-  pinMode(6, OUTPUT);
-  pinMode(7, OUTPUT);
-  pinMode(8, OUTPUT);
-  pinMode(2, INPUT);
-  pinMode(3, INPUT);
-  pinMode(4, INPUT);
+  pinMode(PinButton, INPUT); 
+  pinMode(ledPin, OUTPUT); 
+  Serial.begin(9600); 
+  delay(100);
 }
 
-// the loop function runs over and over again forever
-void loop() {
-
-  Serial.println(digitalRead(4));
-//  if (digitalRead(3) == 1) {
- //   digitalWrite(6, HIGH);
-//  }
-
- // digitalWrite(6, LOW);
-
-  delay(1000);
-                       // wait for a second
-}
+void loop() 
+{
+  if ( digitalRead(PinButton) == HIGH) // se chave = nivel alto 
+  {
+    digitalWrite(ledPin, HIGH); 
+    Serial.print("Acendendo Led");
+  }
+  else 
+  {
+    digitalWrite(ledPin, LOW); 
+    Serial.print("Desligando led");
+  } 
+  delay(100);
+} 
