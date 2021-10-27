@@ -43,16 +43,16 @@ void loop()
   }
 
   
-  int digit[] = {0,0,0};
-  int number = Serial.read();
+ // int digit[] = {0,0,0};
+ // int number = Serial.read();
 
-  for (int i = 1; i<4; i++){
-    digit[-i] = number%2;
-    if (number%2 == 1){
-      digitalWrite(i+7,HIGH);
-    number = (number-(number%2))/2;
-    }
-  }
+  //for (int i = 1; i<4; i++){
+   // digit[-i] = number%2;
+   // if (number%2 == 1){
+    //  digitalWrite(i+7,HIGH);
+    //number = (number-(number%2))/2;
+   // }
+ // }
     
 
   
